@@ -5,12 +5,25 @@
 html, body, #wrapper{
 	height: 100%;
 }
+p, ul{
+	text-align:justify;
+	text-size: 12.5pt;
+	font-family: 'Times New Roman';
+}
+button{
+	background-color: #008CBA;
+	border: 0;
+	color: #FFF;
+	padding: 5px 10px;
+	display: inline-block;
+}
 body{
 	min-width: 1024px;
 }
 body > #wrapper{
 	height: auto;
 	min-height: 100%;
+	background: url('../images/bg.png') repeat;
 }
 header{
 	width: 100%;
@@ -20,7 +33,9 @@ header{
 header > span{
 	color: #FFF;
 	font-size: 28px;
-	padding-top: 11px;
+	position: relative;
+	top: 7px;
+	left: 7px;
 }
 footer{
 	position: relative;
@@ -31,9 +46,82 @@ footer{
 	background-color: #05668d;
 }
 #wrap{
-	padding-bottom: 120px;
+	padding-bottom: 130px;
 }
 #main{
-	width: 980px;
+	width: 1020px;
 	margin: 0 auto;
+	margin-top: 30px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	background-color: #FFF;
+}
+#about-us{
+	padding-bottom: 40px;
+	padding: 15px 20px 25px 20px;
+	background-color: #B7DEFF;
+}
+#about-us > h1{
+	text-align: center;
+}
+#about-us p{
+	padding-top: 15px;
+}
+#about-us p::first-letter{
+	color: red;
+	font-size: 16pt;
+}
+#good_list{
+	background-color: #5497C4;
+	height: 98px;
+	width: 100%;
+	padding-top: 2px;
+}
+#good_desc{
+	padding: 10px 15px 20px 15px;
+}
+#good_desc h1{
+	text-align: center;
+}
+#good_desc p{
+	padding-top: 10px;
+}
+#good_desc p::first-letter{
+	color: red;
+	font-size: 16pt;
+}
+#good_desc img{
+	width: 250px;
+}
+#price{
+	background-color: #F44336;
+	padding: 5px 10px;
+}
+#cart{
+	padding: 15px 20px;
+	background-color: #F6FEAA;
+}
+#cart h1{
+	text-align: center;
+}
+#cart form{
+	padding-top: 10px;
+}
+#cart input{
+	padding: 5px 10px;
+	font-style: oblique;
+}
+#cart th{
+	text-align: left;
+}
+.list{
+	float: left;
+	width: 100px;
+	margin-left: 85px;
+	display: block;
+	cursor: pointer;
+}
+.list img{
+	width: 94px;
+	border-radius: 48px;
+	border: 1px solid black;
 }
