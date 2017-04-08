@@ -1,0 +1,39 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html, body, #wrapper{
+	height: 100%;
+}
+body{
+	min-width: 1024px;
+}
+body > #wrapper{
+	height: auto;
+	min-height: 100%;
+}
+header{
+	width: 100%;
+	height: 50px;
+	background-color: #00a896;
+}
+header > span{
+	color: #FFF;
+	font-size: 28px;
+	padding-top: 11px;
+}
+footer{
+	position: relative;
+	margin-top: -100px; 
+	height: 100px;
+	clear: both;
+	width: 100%;
+	background-color: #05668d;
+}
+#wrap{
+	padding-bottom: 120px;
+}
+#main{
+	width: 980px;
+	margin: 0 auto;
+}
