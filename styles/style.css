@@ -113,6 +113,25 @@ footer{
 #cart th{
 	text-align: left;
 }
+#cartgoods table{
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+	margin-top: 15px;
+}
+#cartgoods td, #cartgoods th{
+	border: 1px solid black;
+}
+#cartgoods th{
+	text-align: center;
+}
+#cartgoods tr:last-of-type th{
+	text-align: right;
+	padding-right: 40px;
+} 
+#cartgoods img{
+	width: 75px;
+}
 .list{
 	float: left;
 	width: 100px;

@@ -6,6 +6,33 @@
 		<meta name="description" content="" />
 		<title>ArtIKs Shop</title>
 		<link rel="stylesheet" type="text/css" href="styles/style.css" />
+		<script type="text/javascript" src="scripts/jquery.js"></script>
+		<script type="text/javascript" src="scripts/js.cookie.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				for(var i = 2; i <= 5; i++)
+					$("#desc_"+i).hide();
+				var current = 1;
+				var data = new Array();
+				data[1] = [''];
+				var cart = new Array();
+				if(Cookies.get("cart") != undefined)
+					cart = JSON.parse(Cookies.get("cart"));
+				$(".list").click(function(){
+					change = $(this).data("id");
+					if(change != current){
+						$("#desc_"+current).hide();
+						$("#desc_"+change).fadeIn();
+						current = change;
+					}
+				});
+				$(".addCart").click(function(){
+					cart.push($(this).data("id"));
+					Cookies.set("cart", JSON.stringify(cart));
+					console.log(Cookies.get("cart"));
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<div id="wrapper">
@@ -29,7 +56,7 @@
 						</div>
 						<div id="good_desc">
 							<div id="desc_1">
-								<h1>Title</h1>
+								<h1>Title 1</h1>
 								<table>
 									<tr>
 										<td colspan="2">
@@ -51,7 +78,119 @@
 										</td>
 									</tr>
 									<tr>
-										<td><button>Add to Cart</button></td>
+										<td><button class="addCart" data-id="1">Add to Cart</button></td>
+										<td><span class="price">Price: $25</span></td>
+									</tr>
+								</table>
+							</div>
+							<div id="desc_2">
+								<h1>Title 2</h1>
+								<table>
+									<tr>
+										<td colspan="2">
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie magna ut vehicula hendrerit. Integer leo magna, mattis eget condimentum et, cursus non dolor. Curabitur vulputate volutpat nunc quis vehicula. Sed mauris lectus, vulputate non facilisis vitae, ultrices ut nulla. Quisque eu ultricies purus, ac laoreet sem. Suspendisse laoreet magna leo, in molestie sapien fermentum eget. Suspendisse quis mauris rhoncus, cursus orci sed, volutpat tortor.</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="images/price.jpg" />
+										</td>
+										<td>
+											<ul>
+												<li>Proin eget nisi sagittis, fringilla magna vitae, fermentum nisi.</li>
+												<li>Morbi a enim sed nibh bibendum dignissim.</li>
+												<li>Nunc ultricies ex at lacus tristique, vel imperdiet neque fringilla.</li>
+												<li>Praesent id est placerat, consequat turpis non, viverra augue.</li>
+												<li>Proin quis ligula sit amet ante commodo vehicula.</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<td><button class="addCart" data-id="2">Add to Cart</button></td>
+										<td><span class="price">Price: $25</span></td>
+									</tr>
+								</table>
+							</div>
+							<div id="desc_3">
+								<h1>Title 3</h1>
+								<table>
+									<tr>
+										<td colspan="2">
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie magna ut vehicula hendrerit. Integer leo magna, mattis eget condimentum et, cursus non dolor. Curabitur vulputate volutpat nunc quis vehicula. Sed mauris lectus, vulputate non facilisis vitae, ultrices ut nulla. Quisque eu ultricies purus, ac laoreet sem. Suspendisse laoreet magna leo, in molestie sapien fermentum eget. Suspendisse quis mauris rhoncus, cursus orci sed, volutpat tortor.</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="images/price.jpg" />
+										</td>
+										<td>
+											<ul>
+												<li>Proin eget nisi sagittis, fringilla magna vitae, fermentum nisi.</li>
+												<li>Morbi a enim sed nibh bibendum dignissim.</li>
+												<li>Nunc ultricies ex at lacus tristique, vel imperdiet neque fringilla.</li>
+												<li>Praesent id est placerat, consequat turpis non, viverra augue.</li>
+												<li>Proin quis ligula sit amet ante commodo vehicula.</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<td><button class="addCart" data-id="3">Add to Cart</button></td>
+										<td><span class="price">Price: $25</span></td>
+									</tr>
+								</table>
+							</div>
+							<div id="desc_4">
+								<h1>Title 4</h1>
+								<table>
+									<tr>
+										<td colspan="2">
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie magna ut vehicula hendrerit. Integer leo magna, mattis eget condimentum et, cursus non dolor. Curabitur vulputate volutpat nunc quis vehicula. Sed mauris lectus, vulputate non facilisis vitae, ultrices ut nulla. Quisque eu ultricies purus, ac laoreet sem. Suspendisse laoreet magna leo, in molestie sapien fermentum eget. Suspendisse quis mauris rhoncus, cursus orci sed, volutpat tortor.</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="images/price.jpg" />
+										</td>
+										<td>
+											<ul>
+												<li>Proin eget nisi sagittis, fringilla magna vitae, fermentum nisi.</li>
+												<li>Morbi a enim sed nibh bibendum dignissim.</li>
+												<li>Nunc ultricies ex at lacus tristique, vel imperdiet neque fringilla.</li>
+												<li>Praesent id est placerat, consequat turpis non, viverra augue.</li>
+												<li>Proin quis ligula sit amet ante commodo vehicula.</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<td><button class="addCart" data-id="4">Add to Cart</button></td>
+										<td><span class="price">Price: $25</span></td>
+									</tr>
+								</table>
+							</div>
+							<div id="desc_5">
+								<h1>Title 5</h1>
+								<table>
+									<tr>
+										<td colspan="2">
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie magna ut vehicula hendrerit. Integer leo magna, mattis eget condimentum et, cursus non dolor. Curabitur vulputate volutpat nunc quis vehicula. Sed mauris lectus, vulputate non facilisis vitae, ultrices ut nulla. Quisque eu ultricies purus, ac laoreet sem. Suspendisse laoreet magna leo, in molestie sapien fermentum eget. Suspendisse quis mauris rhoncus, cursus orci sed, volutpat tortor.</p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="images/price.jpg" />
+										</td>
+										<td>
+											<ul>
+												<li>Proin eget nisi sagittis, fringilla magna vitae, fermentum nisi.</li>
+												<li>Morbi a enim sed nibh bibendum dignissim.</li>
+												<li>Nunc ultricies ex at lacus tristique, vel imperdiet neque fringilla.</li>
+												<li>Praesent id est placerat, consequat turpis non, viverra augue.</li>
+												<li>Proin quis ligula sit amet ante commodo vehicula.</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<td><button class="addCart" data-id="5">Add to Cart</button></td>
 										<td><span class="price">Price: $25</span></td>
 									</tr>
 								</table>
@@ -60,6 +199,25 @@
 					</div>
 					<div id="cart">
 						<h1>Cart</h1>
+						<div id="cartgoods">
+							<table>
+								<tr>
+									<th>Preview</th>
+									<th>Name</th>
+									<th>Price</th>
+									<th>Remove</th>
+								</tr>
+								<tr>
+									<td><img src="images/badge.png" /></td>
+									<td>Title1</td>
+									<td>25$</td>
+									<td><a href="#">X</a></td>
+								</tr>
+								<tr>
+									<th colspan="4">Total: 25$</th>
+								</tr>
+							</table>
+						</div>
 						<form method="POST" action="#">
 							<table>
 								<tr>
