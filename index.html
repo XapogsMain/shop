@@ -14,10 +14,16 @@
 					$("#desc_"+i).hide();
 				var current = 1;
 				var data = new Array();
-				data[1] = [''];
-				var cart = new Array();
-				if(Cookies.get("cart") != undefined)
-					cart = JSON.parse(Cookies.get("cart"));
+				data[1] = {name: 'title1', img: 'badge.png', price: 25};
+				data[2] = {name: 'title2', img: 'badge.png', price: 25};
+				data[3] = {name: 'title3', img: 'badge.png', price: 25};
+				data[4] = {name: 'title4', img: 'badge.png', price: 25};
+				data[5] = {name: 'title5', img: 'badge.png', price: 25};
+				var cart = Cookies.get("cart");
+				if(cart != undefined){
+					cart = JSON.parse(cart);
+				}
+				update(cart);
 				$(".list").click(function(){
 					change = $(this).data("id");
 					if(change != current){
@@ -28,9 +34,43 @@
 				});
 				$(".addCart").click(function(){
 					cart.push($(this).data("id"));
-					Cookies.set("cart", JSON.stringify(cart));
-					console.log(Cookies.get("cart"));
+					updateCookie(cart);
 				});
+				$(".removeGood").click(function(event){
+					event.preventDefault();
+					i = $(this).data("i");
+					cart.splice(i, 1);
+					updateCookie(cart);
+				});
+				function updateCookie(cart){
+					Cookies.set("cart", JSON.stringify(cart));
+					update(cart);
+				}
+				function update(goods){
+					if((goods != null) && (goods != "")){
+						$("form").show();
+						$("#noGoods").hide();
+						var rows = "";
+						var sum = 0;
+						$("#cartgoods table").html('<tr><th>Preview</th><th>Name</th><th>Price</th><th>Remove</th></tr><tr><th colspan="4">Total: <span>25</span>$</th></tr>');
+						for(var i = 0; i < cart.length; i++){
+							obj = data[cart[i]];
+							rows += "<tr>";
+							rows += "<td><img src='images/"+obj.img+"' /></td>";
+							rows += "<td>"+obj.name+"</td>";
+							rows += "<td>"+obj.price+"</td>";
+							rows += "<td><button class='removeGood' data-i='"+i+"'>X</button></td>";
+							rows += "</tr>";
+							sum += obj.price;
+						}
+						$("#cartgoods tr:last th span").html(sum);
+						$(rows).insertAfter($("#cartgoods tr:first"));
+					}
+					else{
+						$("form").hide();
+						$("#noGoods").show();
+					}	
+				}
 			});
 		</script>
 	</head>
@@ -199,26 +239,12 @@
 					</div>
 					<div id="cart">
 						<h1>Cart</h1>
-						<div id="cartgoods">
-							<table>
-								<tr>
-									<th>Preview</th>
-									<th>Name</th>
-									<th>Price</th>
-									<th>Remove</th>
-								</tr>
-								<tr>
-									<td><img src="images/badge.png" /></td>
-									<td>Title1</td>
-									<td>25$</td>
-									<td><a href="#">X</a></td>
-								</tr>
-								<tr>
-									<th colspan="4">Total: 25$</th>
-								</tr>
-							</table>
-						</div>
 						<form method="POST" action="#">
+							<div id="cartgoods">
+								<table>
+									
+								</table>
+							</div>
 							<table>
 								<tr>
 									<th>Name:</th><td><input type="text" name="name" placeholder="Enter your name..." /></td>
@@ -231,6 +257,9 @@
 								</tr>
 							</table>
 						</form>
+						<div id="noGoods">
+							<h3>No goods selected!</h3>
+						</div>
 					</div>
 				</div>
 			</div>
