@@ -23,7 +23,8 @@
 		
 		public function getController(){
 			$uri = $_SERVER['REQUEST_URI'];
-			$controller = substr($uri, strlen($this->config->folder)+1);
+			$controller = preg_split("/\?/", substr($uri, strlen($this->config->folder)+1));
+			$controller = $controller[0];
 			return $controller;
 		}
 		

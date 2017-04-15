@@ -9,6 +9,11 @@
 			return false;
 		}
 		
+		public function checkPass($pass){
+			if(preg_match("/^[a-z0-9A-Z]+$/", $pass)) return true;
+			return false;
+		}
+		
 	}
 
 ?>

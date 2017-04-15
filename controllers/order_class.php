@@ -16,7 +16,7 @@
 				$name = $_POST["name"];
 				$surname = $_POST["surname"];
 				$order = $_COOKIE["cart"];
-				$this->db->Insert("orders", array("name"=>$name, "lastname"=>$surname, "goods"=>$order));
+				$this->db->Insert("orders", array("name"=>$name, "lastname"=>$surname, "goods"=>$order, "data"=>time()));
 				setcookie("cart", "", time()-1, "/");
 			}
 			header("Location: ".$this->config->folder);

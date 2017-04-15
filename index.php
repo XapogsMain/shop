@@ -6,6 +6,7 @@
 			if(file_exists($folders[$i]."/".$class_name."_class.php"))
 				require_once $folders[$i]."/".$class_name."_class.php";
 	}
+	session_start();
 	define("ACTKEY", true);
 	$router = new Router();
 ?>

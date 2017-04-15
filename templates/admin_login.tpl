@@ -5,9 +5,9 @@
 		<title>Auth</title>
 		<link href="<?=$this->path;?>styles/style.css" type="text/css" rel="stylesheet" />
 	</head>
-	<body>
+	<body id="auth-page">
 		<div id="auth_form">
-			<form action="/login" method="POST">
+			<form action="<?=$this->path;?>admin" method="POST">
 				<table>
 					<tr>
 						<td colspan="2"><h2>Auth form</h2></td>

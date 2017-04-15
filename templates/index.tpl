@@ -152,7 +152,7 @@
 			</div>
 		</div>
 		<footer>
-			<span>&copy;WebShop@hz che suvatj v footer :D</span>
+			<span>&copy;WebShop@neznaju che suvatj v footer :D</span>
 		</footer>
 	</body>
 </html>
