@@ -48,6 +48,16 @@ footer{
 #wrap{
 	padding-bottom: 130px;
 }
+#auth_form{
+	background-color: #FFF;
+	padding: 15px;
+	border-radius: 14px;
+	width: 230px;
+	margin: 300px auto;
+}
+#auth_form h2{
+	text-align: center;
+}
 #main{
 	width: 1020px;
 	margin: 0 auto;
